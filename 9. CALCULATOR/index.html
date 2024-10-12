@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Calculator</title>
+
+    <style>
+
+        body {
+
+            font-family: Arial, sans-serif;
+
+            background-color: red;
+
+        }
+
+
+        .calculator {
+
+            width: 300px;
+
+            margin: 50px auto;
+
+            padding: 20px;
+
+            background-color: #fff;
+
+            border-radius: 10px;
+
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+        }
+
+
+            .calculator input[type="text"] {
+
+                width: 100%;
+
+                margin-bottom: 10px;
+
+                padding: 10px;
+
+                font-size: 18px;
+
+                border-radius: 5px;
+
+                border: 1px solid #ccc;
+
+            }
+
+
+            .calculator input[type="button"] {
+
+                width: 48%;
+
+                padding: 10px;
+
+                font-size: 18px;
+
+                border-radius: 5px;
+
+                border: 1px solid #ccc;
+
+                cursor: pointer;
+
+            }
+
+
+                .calculator input[type="button"]:hover {
+
+                    background-color: silver;
+
+                }
+
+
+                .calculator input[type="button"].equals {
+
+                    width: 100%;
+
+                }
+
+    </style>
+
+</head>
+
+<body>
+
+
+    <div class="calculator">
+
+        <input type="text" id="result" readonly>
+
+        <input type="button" value="7" onclick="appendToResult('7')">
+
+        <input type="button" value="8" onclick="appendToResult('8')">
+
+        <input type="button" value="9" onclick="appendToResult('9')">
+
+        <input type="button" value="/" onclick="appendToResult('/')">
+
+        <input type="button" value="4" onclick="appendToResult('4')">
+
+        <input type="button" value="5" onclick="appendToResult('5')">
+
+        <input type="button" value="6" onclick="appendToResult('6')">
+
+        <input type="button" value="*" onclick="appendToResult('*')">
+
+        <input type="button" value="1" onclick="appendToResult('1')">
+
+        <input type="button" value="2" onclick="appendToResult('2')">
+
+        <input type="button" value="3" onclick="appendToResult('3')">
+
+        <input type="button" value="-" onclick="appendToResult('-')">
+
+        <input type="button" value="0" onclick="appendToResult('0')">
+
+        <input type="button" value="." onclick="appendToResult('.')">
+
+        <input type="button" value="=" class="equals" onclick="calculate()">
+
+        <input type="button" value="+" onclick="appendToResult('+')">
+
+        <input type="button" value="C" onclick="clearResult()">
+
+    </div>
+
+
+    <script>
+
+        function appendToResult(value) {
+
+            document.getElementById("result").value += value;
+
+        }
+
+
+        function calculate() {
+
+            var result = document.getElementById("result").value;
+
+            if (result) {
+
+                try {
+
+                    document.getElementById("result").value = eval(result);
+
+                } catch (error) {
+
+                    document.getElementById("result").value = "Error";
+
+                }
+
+            }
+
+        }
+
+
+        function clearResult() {
+
+            document.getElementById("result").value = "";
+
+        }
+
+    </script>
+
+    <h1>Made By Sachin Kumar Pandey</h1>
+
+
+
+</body>
+
+</html>
